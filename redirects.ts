@@ -14,5 +14,12 @@ export const redirects: NextConfig['redirects'] = async () => {
     source: '/:path((?!ie-incompatible.html$).*)',
   }
 
-  return [internetExplorerRedirect]
+  return [
+    {
+      source: '/',
+      destination: '/admin',
+      permanent: false,
+    },
+    internetExplorerRedirect,
+  ]
 }
